@@ -1,1 +1,1 @@
-export const GET_ITEMS = ''
+export const GET_ITEMS = 'https://raw.githubusercontent.com/GPFAFF/shopping-cart/master/src/data.json'
