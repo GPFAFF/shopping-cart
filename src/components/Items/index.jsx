@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import React, {
   Fragment,
   useState,
@@ -11,13 +10,17 @@ import { GET_ITEMS } from '../../constants';
 export const ItemContainer = () => {
   const [ itemData, setItemData ] = useState(null);
   useEffect(() => {
-    axios.get(GET_ITEMS).then(response => setItemData(response.data));
+    async function fetchData() {
+      const result = await axios.get(GET_ITEMS);
+      setItemData(result.data)
+    }
+    fetchData()
   }, [])
 
   return (
     <Fragment>
       <h2>Available Items</h2>
-      {itemData.map(item => <Item data={item} /> )}
+      {itemData.map(item => <Item item={item}/>)}
     </Fragment>
   )
 }

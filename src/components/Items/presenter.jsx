@@ -1,11 +1,12 @@
 import React from 'react'
 
-export const Item = ({ data }) => {
-  const { x, y, z } = data;
-  console.log(x, y, z)
+export const Item = ({ price, qty, name }) => {
+
   return (
     <div>
-      <h2>Meh</h2>
+      <span>{name}</span>
+      <span>{price}</span>
+      <span>{qty}</span>
     </div>
   )
 }
